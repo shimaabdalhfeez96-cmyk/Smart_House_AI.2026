@@ -1,0 +1,301 @@
+{
+  "project": "SMART HOUSE AI",
+  "model_name": "XGBoost (tuned)",
+  "model_class": "XGBRegressor",
+  "model_version": "1.0.0",
+  "training_date": "2026-10-12T21:25:08",
+  "trained_on": "Train split فقط (80%)، النموذج لم يرَ بيانات الاختبار",
+  "target": "price",
+  "target_unit": "USD",
+  "features": [
+    "bedrooms",
+    "bathrooms",
+    "sqft_living",
+    "sqft_lot",
+    "floors",
+    "waterfront",
+    "view",
+    "condition",
+    "grade",
+    "sqft_basement",
+    "house_age",
+    "was_renovated",
+    "basement_ratio",
+    "distance_from_seattle",
+    "bath_bed_ratio",
+    "relative_size_to_neighbors",
+    "location_score"
+  ],
+  "feature_count": 17,
+  "user_input_columns": [
+    "zipcode",
+    "bedrooms",
+    "bathrooms",
+    "sqft_living",
+    "sqft_lot",
+    "floors",
+    "waterfront",
+    "view",
+    "condition",
+    "grade",
+    "sqft_basement",
+    "yr_built",
+    "yr_renovated"
+  ],
+  "reference_year": 2015,
+  "metrics_test": {
+    "R2": 0.8836060344130273,
+    "RMSE": 128003.5878752563,
+    "MAE": 71227.72384233617,
+    "MAPE_percent": 13.225886646301102
+  },
+  "cv_r2": 0.86924772718753,
+  "model_comparison_test": {
+    "Linear Regression": {
+      "R²": 0.7949506071747514,
+      "RMSE ($)": 169897.17365709925,
+      "MAE ($)": 101372.58186945652,
+      "MAPE (%)": 20.066263511995032
+    },
+    "Random Forest (tuned)": {
+      "R²": 0.8699037428597141,
+      "RMSE ($)": 135328.51351073175,
+      "MAE ($)": 73623.57540849333,
+      "MAPE (%)": 13.415332156693102
+    },
+    "XGBoost (tuned)": {
+      "R²": 0.8836060344130273,
+      "RMSE ($)": 128003.5878752563,
+      "MAE ($)": 71227.72384233617,
+      "MAPE (%)": 13.225886646301102
+    }
+  },
+  "model_selection_cv_r2": {
+    "XGBoost (tuned)": 0.86924772718753,
+    "Random Forest (tuned)": 0.8583401962681783,
+    "Linear Regression": 0.7935117886056089
+  },
+  "model_params": {
+    "objective": "reg:squarederror",
+    "base_score": null,
+    "booster": null,
+    "callbacks": null,
+    "colsample_bylevel": null,
+    "colsample_bynode": null,
+    "colsample_bytree": null,
+    "device": null,
+    "early_stopping_rounds": null,
+    "enable_categorical": true,
+    "eval_metric": null,
+    "feature_types": null,
+    "feature_weights": null,
+    "gamma": null,
+    "grow_policy": null,
+    "importance_type": null,
+    "interaction_constraints": null,
+    "learning_rate": 0.1,
+    "max_bin": null,
+    "max_cat_threshold": null,
+    "max_cat_to_onehot": null,
+    "max_delta_step": null,
+    "max_depth": 4,
+    "max_leaves": null,
+    "min_child_weight": null,
+    "missing": NaN,
+    "monotone_constraints": null,
+    "multi_strategy": null,
+    "n_estimators": 500,
+    "n_jobs": null,
+    "num_parallel_tree": null,
+    "random_state": 42,
+    "reg_alpha": null,
+    "reg_lambda": null,
+    "sampling_method": null,
+    "scale_pos_weight": null,
+    "subsample": null,
+    "tree_method": null,
+    "validate_parameters": null,
+    "verbosity": null
+  },
+  "dataset": {
+    "file": "kc_house_data.csv",
+    "rows_raw": 21613,
+    "rows_after_cleaning": 21436,
+    "train_rows": 17148,
+    "test_rows": 4288,
+    "sale_date_range": [
+      "2014-05-02",
+      "2015-05-27"
+    ],
+    "price_min": "75000.0",
+    "price_mean": 541649.962726255,
+    "price_max": "7700000.0",
+    "random_state": 42
+  },
+  "known_zipcodes": [
+    98001,
+    98002,
+    98003,
+    98004,
+    98005,
+    98006,
+    98007,
+    98008,
+    98010,
+    98011,
+    98014,
+    98019,
+    98022,
+    98023,
+    98024,
+    98027,
+    98028,
+    98029,
+    98030,
+    98031,
+    98032,
+    98033,
+    98034,
+    98038,
+    98039,
+    98040,
+    98042,
+    98045,
+    98052,
+    98053,
+    98055,
+    98056,
+    98058,
+    98059,
+    98065,
+    98070,
+    98072,
+    98074,
+    98075,
+    98077,
+    98092,
+    98102,
+    98103,
+    98105,
+    98106,
+    98107,
+    98108,
+    98109,
+    98112,
+    98115,
+    98116,
+    98117,
+    98118,
+    98119,
+    98122,
+    98125,
+    98126,
+    98133,
+    98136,
+    98144,
+    98146,
+    98148,
+    98155,
+    98166,
+    98168,
+    98177,
+    98178,
+    98188,
+    98198,
+    98199
+  ],
+  "input_ranges": {
+    "bedrooms": {
+      "min": "0",
+      "max": "11"
+    },
+    "bathrooms": {
+      "min": "0.0",
+      "max": "8.0"
+    },
+    "sqft_living": {
+      "min": "290",
+      "max": "13540"
+    },
+    "sqft_lot": {
+      "min": "520",
+      "max": "1651359"
+    },
+    "floors": {
+      "min": "1.0",
+      "max": "3.5"
+    },
+    "sqft_basement": {
+      "min": "0",
+      "max": "4820"
+    },
+    "yr_built": {
+      "min": "1900",
+      "max": "2015"
+    },
+    "grade": {
+      "min": "1",
+      "max": "13"
+    },
+    "condition": {
+      "min": "1",
+      "max": "5"
+    },
+    "view": {
+      "min": "0",
+      "max": "4"
+    },
+    "waterfront": {
+      "min": 0,
+      "max": 1
+    },
+    "yr_renovated": {
+      "min": "1934",
+      "max": "2015",
+      "note": "0 = لم يُرمَّم"
+    }
+  },
+  "pipeline_file": "final_house_price_pipeline.pkl",
+  "pipeline_steps": [
+    "features",
+    "model"
+  ],
+  "preprocessing_module": "house_features.py (HouseFeatureBuilder) - يجب أن يكون قابلاً للاستيراد عند joblib.load",
+  "libraries": {
+    "python": "3.13.9",
+    "scikit-learn": "1.7.2",
+    "xgboost": "3.4.1",
+    "pandas": "2.3.3",
+    "numpy": "2.3.5"
+  },
+  "notes": [
+    "الأسعار المتوقعة تعكس سوق King County بين 2014 و2015.",
+    "distance_from_seattle تُحسب من مركز المنطقة (ZIP) وليس من إحداثيات البيت.",
+    "المنطقة غير المعروفة تأخذ متوسط السعر العام (fallback).",
+    "كل Scaler / خرائط المناطق مخزنة داخل الـ Pipeline نفسه."
+  ],
+  "shap": {
+    "explainer": "shap.TreeExplainer",
+    "computed_on": "Test set",
+    "base_value": 539919.5625,
+    "global_importance_mean_abs": {
+      "location_score": 117623.6328125,
+      "grade": 74050.7421875,
+      "sqft_living": 58907.92578125,
+      "distance_from_seattle": 42584.04296875,
+      "relative_size_to_neighbors": 30525.251953125,
+      "sqft_lot": 21377.955078125,
+      "view": 20218.291015625,
+      "house_age": 20177.31640625,
+      "sqft_basement": 15280.7685546875,
+      "condition": 14092.46875,
+      "waterfront": 7744.35546875,
+      "basement_ratio": 6380.48291015625,
+      "bath_bed_ratio": 5547.68408203125,
+      "bathrooms": 4400.7587890625,
+      "floors": 4146.99462890625,
+      "was_renovated": 3508.71630859375,
+      "bedrooms": 1318.2530517578125
+    }
+  }
+}
